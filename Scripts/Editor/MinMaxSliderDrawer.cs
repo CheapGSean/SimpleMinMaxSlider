@@ -17,6 +17,10 @@ public class MinMaxSliderDrawer : PropertyDrawer {
         
         Rect[] splittedRect = SplitRect(controlRect,3);
 
+		// Ensure that no EditorGUI indentation is used.
+		// (It messes things up in arrays)
+		EditorGUI.indentLevel = 0;
+
         if(propertyType == SerializedPropertyType.Vector2){ 
 
             EditorGUI.BeginChangeCheck();
